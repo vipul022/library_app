@@ -10,12 +10,10 @@ class BooksController < ApplicationController
       end 
 
       session[:books].push(params[:book])
-      p "--------"
-      p params
       redirect_to book_path(session[:books].length)
-      # redirect_to books_path
+      
     end
-
+      
     def new
 
     end
@@ -33,8 +31,15 @@ class BooksController < ApplicationController
 
 
     def update
-        @book_id = params[:id].to_i -1 
+        @book_id = params[:id].to_i - 1 
         session[:books][@book_id] = params[:book]
-        redirect_to books_path
+        redirect_to book_path(params[:id].to_i)
+    end
+
+    def destroy
+
     end
 end
+     
+
+       

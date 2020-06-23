@@ -1,19 +1,18 @@
 <h1>Book Page</h1>
 
 <ul>
-    <% @books.each do |book| %>
+    <% @books.each_with_index do |book, index| %>
       <li>
          <h3>Title: <%=  book["title"]  %> </h3>
          <h3>Author: <%= book["author"] %> </h3>
-         <h3>Year: <%= book["year"] %>   </h3>
+         <h3>Published date: <%= book["date"] %>   </h3>
       </li>
+      <div>
+         <%= link_to "Update", edit_book_path(index + 1) %>
+         <%= link_to "Show", book_path(index + 1) %>
+         <%= link_to "Delete", book_path(index + 1), method: :delete %>
+      </div>
+        
     <% end %>  
 </ul>
 
-<div>
-    <%= link_to("Add a new book", new_book_path) %>
-</div>
-
-<div>
-    <%= link_to("Update a book", edit_book_path(:id)) %>
-</div>
