@@ -52,10 +52,10 @@ class BooksController < ApplicationController
 
     end
 
-    private
     def find_book
         @book = Book.find(params[:id])
     end
+    private
 
     def book_params 
       params.require(:book).permit(:title, :author, :published_date)
