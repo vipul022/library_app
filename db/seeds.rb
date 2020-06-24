@@ -18,7 +18,7 @@
   Book.create(
     title: Faker::Book.title, 
     author: Faker::Book.author, 
-    Faker::Date.between(from: 10000.days.ago, to: Date.today)
+    published_date: Faker::Date.between(from: 10000.days.ago, to: Date.today)
   )
-  puts "created #{i} records"
+  
 end 
