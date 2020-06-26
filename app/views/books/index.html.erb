@@ -10,7 +10,7 @@
       <div>
          <%= link_to "Update", edit_book_path(book.id) %>
          <%= link_to "Show", book_path(book.id) %>
-         <%= link_to "Delete", book_path(book.id), method: :delete %>
+         <%= link_to "Delete", book_path(book.id), method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
         
     <% end %>  

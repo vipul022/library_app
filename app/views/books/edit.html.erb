@@ -1,6 +1,6 @@
 <h1>Edit a book<h1>
 
-<form action="<%= book_path(params[:id]) %>" method="POST">
+<form action="<%= book_path(@book.id) %>" method="POST">
 
  <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token" /> 
 
