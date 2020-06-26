@@ -1,18 +1,18 @@
 <h1>Book Page</h1>
 
-<ul>
+<div class="card-container">
     <% @books.each do |book| %>
-      <li>
+      <div class="card">
          <h3>Title: <%=  book.title  %> </h3>
          <h3>Author: <%= book.author %> </h3>
          <h3>Published date: <%= book.published_date %>   </h3>
-      </li>
-      <div>
+      
+        <div class="links">
          <%= link_to "Update", edit_book_path(book.id) %>
          <%= link_to "Show", book_path(book.id) %>
          <%= link_to "Delete", book_path(book.id), method: :delete, data: { confirm: "Are you sure?" } %>
-      </div>
-        
+        </div>
+      </div>  
     <% end %>  
-</ul>
+</div>
 

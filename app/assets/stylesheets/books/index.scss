@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: red;
+}
+
+.card-container {
+  width: 90%;
+  background: aqua;
+  margin: 0 auto;
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
+
+    
+
+}
+.card {
+  height: 300px;
+  width: 30%;
+  background-color: pink;
+  list-style: none;
+  margin-bottom: 1em;
+  
+  text-align: center!important;
+  border: 1px solid rgba(0,0,0,.125);
+ 
+}
