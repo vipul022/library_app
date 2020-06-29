@@ -14,11 +14,32 @@
 #   )
 # end 
 
-10.times do 
-  Book.create(
-    title: Faker::Book.title, 
-    author: Faker::Book.author, 
-    published_date: Faker::Date.between(from: 10000.days.ago, to: Date.today)
-  )
+# Author.create(
+#   name: "J.K Rowling",
+#   date_of_birth: "1965-07-31"
+
+# )
+
+# Book.create(
+#   title: "Harry Potter",
+#   author_id: 1
+
+
+# )
+# p "seeding database"
+# 3.times do 
+#   author = Author.create(
+#     name: Faker::Book.author,
+#     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65)
   
-end 
+#   )
+#     2.times do 
+#       Book.create(
+#         title: Faker::Book.title, 
+#         author: author.id.to_s, 
+#         published_date: Faker::Date.between(from: 10000.days.ago, to: Date.today)
+#       )
+      
+#     end 
+# end    
+# p "work done"

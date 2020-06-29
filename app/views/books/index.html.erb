@@ -4,7 +4,7 @@
     <% @books.each do |book| %>
       <div class="card">
          <h3>Title: <%=  book.title  %> </h3>
-         <h3>Author: <%= book.author %> </h3>
+         <h3>Author: <%= book.author.name %> </h3>
          <h3>Published date: <%= book.published_date %>   </h3>
       
         <div class="links">
