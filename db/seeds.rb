@@ -26,20 +26,20 @@
 
 
 # )
-# p "seeding database"
-# 3.times do 
-#   author = Author.create(
-#     name: Faker::Book.author,
-#     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65)
+p "seeding database"
+3.times do 
+  author = Author.create(
+    name: Faker::Book.author,
+    date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65)
   
-#   )
-#     2.times do 
-#       Book.create(
-#         title: Faker::Book.title, 
-#         author: author.id.to_s, 
-#         published_date: Faker::Date.between(from: 10000.days.ago, to: Date.today)
-#       )
+  )
+    2.times do 
+      Book.create(
+        title: Faker::Book.title, 
+        author: author.id.to_s, 
+        published_date: Faker::Date.between(from: 10000.days.ago, to: Date.today)
+      )
       
-#     end 
-# end    
-# p "work done"
+    end 
+end    
+p "work done"
