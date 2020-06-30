@@ -12,17 +12,21 @@ class BooksController < ApplicationController
 
       # session[:books].push(params[:book])
       # redirect_to book_path(session[:books].length)
+      
       @book = Book.create(
         title: params[:book][:title],
-        author: params[:book][:author],
+        author: Author.find(params[:author_id]),
+        # author: params[:author_id].to_i ,
         published_date: params[:book][:published_date]
       )
-       redirect_to @book
       
+      redirect_to @book
+    
     end
       
     def new
-
+        
+        @authors = Author.all
     end
 
     def show
@@ -34,7 +38,7 @@ class BooksController < ApplicationController
     def edit
         # @book_id = params[:id].to_i - 1
         # @book = session[:books][@book_id]
-
+        @authors = Author.all
 
     end
 
@@ -43,9 +47,23 @@ class BooksController < ApplicationController
         # @book_id = params[:id].to_i - 1 
         # session[:books][@book_id] = params[:book]
         # redirect_to book_path(params[:id].to_i)
-        @book.update(book_params)
-        # redirect_to celebrity_path(@celebrity.id)
-        redirect_to @book
+        # @book.update(book_params)
+        # redirect_to @book
+        @book  =Book.find(params[:id].to_i)
+        p "----------"
+        pp @book
+        @book.update(
+        title: params[:book][:title],
+        author: Author.find(params[:author_id]),
+        # author: params[:author_id].to_i ,
+        published_date: params[:book][:published_date]
+      )
+      p "-----"
+      pp "@book=> ", @book
+      
+      redirect_to @book
+    
+        
     end
 
     def destroy

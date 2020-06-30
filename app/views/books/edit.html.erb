@@ -11,7 +11,15 @@
     <input type="text" name="book[title]" id="title" value="<%= @book.title %>"   />
 
     <label for="author">Author</label>
-    <input type="text"  name="book[author]" id="author" value="<%= @book.author %>"    />
+    <input type="text"  name="book[author]" id="author" value="<%= @book.author.name %>"    />
+
+    
+    <select id="author" name="author_id">
+      <option>--Select Author--</option>
+      <%@authors.each do | author | %>
+        <option value=<%= author.id %>><%=author.name%></option> 
+      <% end %>
+    </select>
 
     <label for="date">Published date</label>
     <input type="date"   name="book[published_date]" id="date" value="<%= @book.published_date %>"  />

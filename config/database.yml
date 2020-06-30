@@ -24,8 +24,9 @@ default: &default
 development:
   <<: *default
   host: localhost
-  username: user
-  database: app-dev
+  # username: user
+  # database: app-dev
+  database: library_app_development
  
  
 
