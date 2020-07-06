@@ -14,7 +14,7 @@
     <input type="text"  name="book[author]" id="author" value="<%= @book.author.name %>"    />
 
     
-    <select id="author" name="author_id">
+    <select id="author" name="book[author_id]">
       <option>--Select Author--</option>
       <%@authors.each do | author | %>
         <option value=<%= author.id %>><%=author.name%></option> 

@@ -13,23 +13,22 @@ class BooksController < ApplicationController
       # session[:books].push(params[:book])
       # redirect_to book_path(session[:books].length)
       
-      @book = Book.create(
-        title: params[:book][:title],
-        author: Author.find(params[:author_id]),
+      # @book = Book.create(
+      #   title: params[:book][:title],
+      #   author: Author.find(params[:author_id]),
         
-        published_date: params[:book][:published_date]
-      )
-    
-    
-      # @book = Book.create(book_params)
+      #   published_date: params[:book][:published_date]
+      # )
+     
+      @book = Book.create(book_params)
       # byebug
 
-      # p "----------- @books"
+      # p "----------- @book"
       # p @book
       # p "-------@params"
       # p params
     
-      redirect_to books_path
+      redirect_to @book
     
     end
       
@@ -58,16 +57,19 @@ class BooksController < ApplicationController
         # redirect_to book_path(params[:id].to_i)
         # @book.update(book_params)
         # redirect_to @book
-        @book  =Book.find(params[:id].to_i)
+        # @book  =Book.find(params[:id].to_i)
         p "----------"
-        pp @book
-        @book.update(
-        title: params[:book][:title],
-        author: Author.find(params[:author_id]),
-        # author: params[:author_id].to_i ,
-        published_date: params[:book][:published_date]
-      )
+      #   pp @book
+      #   @book.update(
+      #   title: params[:book][:title],
+      #   author: Author.find(params[:author_id]),
+      #   # author: params[:author_id].to_i ,
+      #   published_date: params[:book][:published_date]
+      # )
+
+      @book.update(book_params)
       p "-----"
+
       pp "@book=> ", @book
       
       redirect_to @book
@@ -95,4 +97,4 @@ class BooksController < ApplicationController
 end
      
 
-       
+      

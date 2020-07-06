@@ -9,6 +9,10 @@ class AuthorsController < ApplicationController
 
   end
 
+  def new
+
+  end
+
   def create
     @author = Author.create(author_params)
     #   name: params[:author][:name],
@@ -17,11 +21,21 @@ class AuthorsController < ApplicationController
     redirect_to @author
   end
 
+  def edit
+     
+
+  end
+
+  def update
+
+  end
+
+
+  private
   def find_book
     @author = Author.find(params[:id])
   end
 
-  private
   def author_params 
       params.require(:author).permit(:name, :date_of_birth)
   end

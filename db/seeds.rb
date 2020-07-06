@@ -32,6 +32,15 @@ Book.create(
   author_id: 1
 
 )
+
+genres = ["fantasy", "horror", "romance", "crime","sci-fi"]
+
+  puts"---------" 
+for i in genres
+  Genre.create(name: i)
+  puts "created #{i} genre"
+end
+
 # )
 # p "seeding database"
 # 3.times do 
