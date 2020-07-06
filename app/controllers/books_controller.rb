@@ -16,11 +16,20 @@ class BooksController < ApplicationController
       @book = Book.create(
         title: params[:book][:title],
         author: Author.find(params[:author_id]),
-        # author: params[:author_id].to_i ,
+        
         published_date: params[:book][:published_date]
       )
-      
-      redirect_to @book
+    
+    
+      # @book = Book.create(book_params)
+      # byebug
+
+      # p "----------- @books"
+      # p @book
+      # p "-------@params"
+      # p params
+    
+      redirect_to books_path
     
     end
       
@@ -77,8 +86,12 @@ class BooksController < ApplicationController
     private
 
     def book_params 
-      params.require(:book).permit(:title, :author, :published_date)
+      params.require(:book).permit( :title, :published_date, :author_id)
+     
+      
     end
+
+   
 end
      
 

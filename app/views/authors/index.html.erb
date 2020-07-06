@@ -1,0 +1,19 @@
+<h1>Authors</h1>
+
+
+
+<div class="card-container">
+    <% @authors.each do |author| %>
+      <div class="card">
+         <h3>Name: <%=  author.name  %> </h3>
+         <h3>Date Of Birth: <%= author.date_of_birth %> </h3>
+         
+      
+        <div class="links">
+          <%= link_to "Show", author_path(author.id) %>
+        </div>
+      </div>  
+    <% end %>  
+</div>
+         
+        

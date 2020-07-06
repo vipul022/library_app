@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   patch "/books/:id", to: "books#update"
   get "/books/:id/edit", to: "books#edit", as: "edit_book" #get a form
   delete "/books/:id", to: "books#destroy"
-  
+   resources :authors
   
 end
